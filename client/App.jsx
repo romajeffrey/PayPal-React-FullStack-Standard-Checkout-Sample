@@ -8,7 +8,8 @@ function Message({ content }) {
 
 function App() {
   const initialOptions = {
-    "client-id": "YOUR_PAYPAL_CLIENT_ID",
+    "client-id":
+      "AXLW_XLlopoGjzqdvo8cXuHcw0gLF2AiJaCTVWc1XY2Anc1xRc9wikp1cdbcs--zarOo99hDUXK9jlSJ",
     "enable-funding": "paylater,venmo",
     "data-sdk-integration-source": "integrationbuilder_sc",
   };
@@ -69,7 +70,7 @@ function App() {
                   headers: {
                     "Content-Type": "application/json",
                   },
-                },
+                }
               );
 
               const orderData = await response.json();
@@ -87,7 +88,7 @@ function App() {
               } else if (errorDetail) {
                 // (2) Other non-recoverable errors -> Show a failure message
                 throw new Error(
-                  `${errorDetail.description} (${orderData.debug_id})`,
+                  `${errorDetail.description} (${orderData.debug_id})`
                 );
               } else {
                 // (3) Successful transaction -> Show confirmation or thank you message
@@ -95,18 +96,18 @@ function App() {
                 const transaction =
                   orderData.purchase_units[0].payments.captures[0];
                 setMessage(
-                  `Transaction ${transaction.status}: ${transaction.id}. See console for all available details`,
+                  `Transaction ${transaction.status}: ${transaction.id}. See console for all available details`
                 );
                 console.log(
                   "Capture result",
                   orderData,
-                  JSON.stringify(orderData, null, 2),
+                  JSON.stringify(orderData, null, 2)
                 );
               }
             } catch (error) {
               console.error(error);
               setMessage(
-                `Sorry, your transaction could not be processed...${error}`,
+                `Sorry, your transaction could not be processed...${error}`
               );
             }
           }}
