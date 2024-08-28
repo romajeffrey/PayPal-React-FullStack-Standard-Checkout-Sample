@@ -1,3 +1,6 @@
+clone
+https://github.com/paypaldev/PayPal-React-FullStack-Standard-Checkout-Sample
+
 ![PayPal Developer Cover](https://github.com/paypaldev/.github/blob/main/pp-cover.png)
 
 <div align="center">
